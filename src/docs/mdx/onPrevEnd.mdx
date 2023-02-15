@@ -1,0 +1,38 @@
+---
+name: onPrevEnd
+route: /onPrevEnd
+menu: Examples
+---
+
+import {Playground, Props } from 'docz';
+import Carousel from 'react-elastic-carousel';
+import Item from '../components/SimpleItem';
+
+# onPrevEnd
+#### `onPrevEnd` will pass the new __current__ `item-object` and __current__ `page-index`:  
+```
+(currentItem, pageIndex) => {/*...*/}
+```
+- The `item-object` has the shape of:
+```
+{
+    item: {/* your item */},
+    index: // the item's index number 
+}
+```
+
+
+<Playground >
+    <Carousel 
+        initialActiveIndex={3}
+        itemsToShow={2}
+        onPrevEnd={(currentItem, pageIndex) => alert(JSON.stringify({currentItem, pageIndex}))}
+    >
+    <Item someProp="cool1">1</Item>
+    <Item someProp="cool2">2</Item>
+    <Item someProp="cool3">3</Item>
+    <Item someProp="cool4">4</Item>
+    <Item someProp="cool5">5</Item>
+    <Item someProp="cool6">6</Item>
+    </Carousel>
+</Playground>

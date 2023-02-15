@@ -1,0 +1,52 @@
+---
+name: breakPoints
+route: /breakPoints
+menu: Examples
+---
+
+import {Playground, Props } from 'docz';
+import Carousel from 'react-elastic-carousel';
+import Item from '../components/SimpleItem';
+
+# breakPoints
+_This is the coolest feature and one of the main reasons that `react-elastic-carousel` was written._
+
+The `breakPoints` array, allows you to set different `props` for different sizes of the element, regardless to the window's size.  
+This is due to the fact that `react-elastic-carousel` is listening to the element's `resize` event instead of the window.
+
+#### You can pass an array of objects that will signal `react-elastic-carousel` to change props like `itemsToShow` and `itemsToScroll` (and others) on different `width` values.
+
+**ANY** prop can be passed directly to React Elastic Carousel or via a the breakpoint object. Keep in mind that a prop passed via a breakpoint will override a direct prop. 
+
+## Example
+(_Resize the container to see the changes..._)
+
+<Playground >
+  {
+    class App extends React.Component{
+      constructor(props){
+        super(props);
+        this.breakPoints = [
+          { width: 1, itemsToShow: 1 },
+          { width: 550, itemsToShow: 2, itemsToScroll: 2, pagination: false },
+          { width: 850, itemsToShow: 3 },
+          { width: 1150, itemsToShow: 4, itemsToScroll: 2 },
+          { width: 1450, itemsToShow: 5 },
+          { width: 1750, itemsToShow: 6 }
+        ];
+      }
+      render(){
+        return(
+          <Carousel breakPoints={this.breakPoints}>
+            <Item>1</Item>
+            <Item>2</Item>
+            <Item>3</Item>
+            <Item>4</Item>
+            <Item>5</Item>
+            <Item>6</Item>
+          </Carousel>
+        );
+      }
+    }
+  }
+</Playground>

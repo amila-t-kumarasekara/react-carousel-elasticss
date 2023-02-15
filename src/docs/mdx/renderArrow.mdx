@@ -1,0 +1,65 @@
+---
+name: renderArrow
+route: /renderArrow
+menu: Examples
+---
+
+import {Playground, Props } from 'docz';
+import Carousel, {consts} from 'react-elastic-carousel';
+import Button from '../components/Button';
+import Item from '../components/SimpleItem';
+
+# renderArrow
+
+### You can provide custom Arrow buttons.
+
+## Signature 
+
+- You can pass a function that returns a react element,   
+  This function is a [render prop](https://reactjs.org/docs/render-props.html) and its signature is:  
+```
+({type, onClick, isEdge}) => {/* return your element here */}
+```
+
+- `type` will be either `consts.PREV` or `consts.NEXT`, depends on the relevant arrow direction.
+- `onClick` Is the hook to the inner `onClick` of the `Carousel`. You can attach it wherever you want within the returned component.
+- `isEdge` Will be true when there are no more items to show for this direction.
+
+_You should import the `consts` object to check the arrow direction_
+```
+import Carousel, { consts } from 'react-elastic-carousel';
+ // ....
+
+type === consts.PREV
+```
+
+## Demo
+
+<Playground >
+    {
+       class App extends React.Component{
+            myArrow({type, onClick, isEdge}){
+                const pointer = type === consts.PREV ? '👈' : '👉';
+                return (
+                    <Button onClick={onClick} disabled={isEdge}>
+                        {pointer}
+                    </Button>
+                );
+            }
+            render(){
+                return(
+                    <div>
+                        <Carousel renderArrow={this.myArrow}>
+                            <Item>1</Item>
+                            <Item>2</Item>
+                            <Item>3</Item>
+                            <Item>4</Item>
+                            <Item>5</Item>
+                            <Item>6</Item>
+                        </Carousel>
+                    </div>
+                );
+            }
+        }
+    }
+</Playground>

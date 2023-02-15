@@ -1,0 +1,23 @@
+---
+name: isRTL
+route: /isRTL
+menu: Examples
+---
+
+import {Playground, Props } from 'docz';
+import Carousel from 'react-elastic-carousel';
+import Item from '../components/SimpleItem';
+
+# isRTL
+#### Support for `right-to-left` layouts
+
+<Playground >
+    <Carousel isRTL={true} itemsToShow={3}>
+        <Item>1</Item>
+        <Item>2</Item>
+        <Item>3</Item>
+        <Item>4</Item>
+        <Item>5</Item>
+        <Item>6</Item>    
+    </Carousel>
+</Playground>

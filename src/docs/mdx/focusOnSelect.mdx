@@ -1,0 +1,26 @@
+---
+name: focusOnSelect
+route: /focusOnSelect
+menu: Examples
+---
+
+import {Playground, Props } from 'docz';
+import Carousel from 'react-elastic-carousel';
+import Item from '../components/SimpleItem';
+
+# focusOnSelect
+#### Sliding to an item on click
+
+<Playground >
+    <Carousel 
+        focusOnSelect={true}
+        itemsToShow={3}
+    >
+        <Item>1</Item>
+        <Item>2</Item>
+        <Item>3</Item>
+        <Item>4</Item>
+        <Item>5</Item>
+        <Item>6</Item>
+    </Carousel>
+</Playground>

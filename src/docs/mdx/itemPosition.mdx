@@ -1,0 +1,26 @@
+---
+name: itemPosition
+route: /itemPosition
+menu: Examples
+---
+
+import {Playground, Props } from 'docz';
+import Carousel, {consts} from 'react-elastic-carousel';
+import Item from '../components/SimpleItem';
+
+# itemPosition
+#### Sets the position of the item within the item's wrapper.
+_You should import the `consts` object to pass the desired `itemPosition`_
+
+```
+import Carousel, { consts } from 'react-elastic-carousel';
+```
+
+<Playground >
+    <Carousel itemPosition={consts.START} itemsToShow={2}>
+        <Item maxWidth="50%">1</Item>
+        <Item maxWidth="50%">3</Item>
+        <Item maxWidth="50%">4</Item>
+        <Item maxWidth="50%">5</Item>
+    </Carousel>
+</Playground>

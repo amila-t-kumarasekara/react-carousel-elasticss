@@ -1,0 +1,23 @@
+---
+name: itemPadding
+route: /itemPadding
+menu: Examples
+---
+
+import {Playground, Props } from 'docz';
+import Carousel from 'react-elastic-carousel';
+import Item from '../components/SimpleItem';
+
+# itemPadding
+#### Sets a `padding` to the wrapping element of each item
+
+<Playground>
+    <Carousel itemPadding={[10, 50]} itemsToShow={3}>
+        <Item>1</Item>
+        <Item>2</Item>
+        <Item>3</Item>
+        <Item>4</Item>
+        <Item>5</Item>
+        <Item>6</Item>
+    </Carousel>
+</Playground>

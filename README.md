@@ -1,0 +1,1 @@
+updated version of react-elastic-carousel

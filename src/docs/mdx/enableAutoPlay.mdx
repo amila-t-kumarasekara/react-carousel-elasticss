@@ -1,0 +1,23 @@
+---
+name: enableAutoPlay
+route: /enableAutoPlay
+menu: Examples
+---
+
+import {Playground, Props } from 'docz';
+import Carousel from 'react-elastic-carousel';
+import Item from '../components/SimpleItem';
+
+# enableAutoPlay
+#### Toggle `enableAutoPlay` and set `autoPlaySpeed` as you wish
+
+<Playground >
+    <Carousel enableAutoPlay autoPlaySpeed={1500}>
+        <Item>1</Item>
+        <Item>2</Item>
+        <Item>3</Item>
+        <Item>4</Item>
+        <Item>5</Item>
+        <Item>6</Item>
+    </Carousel>
+</Playground>

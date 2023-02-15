@@ -1,0 +1,27 @@
+---
+name: initialActiveIndex
+route: /initialActiveIndex
+menu: Examples
+---
+
+import {Playground, Props } from 'docz';
+import Carousel from 'react-elastic-carousel';
+import Item from '../components/SimpleItem';
+
+# initialActiveIndex
+
+#### The first active item on mount
+
+<Playground >
+    <Carousel initialActiveIndex={2}>
+        <Item>1</Item>
+        <Item>2</Item>
+        <Item>3</Item>
+        <Item>4</Item>
+        <Item>5</Item>
+        <Item>6</Item>
+    </Carousel>
+</Playground>
+
+---
+> If you are using the old prop `initialFirstItem`, then note that its deprecated and you should use `initialActiveIndex`.
