@@ -11,6 +11,10 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amila-t-kumarasekara/react-carousel-elasticss.git"
+  },
   "engines": {
     "node": ">=8",
     "npm": ">=5"
