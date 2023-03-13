@@ -105,7 +105,7 @@
     "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-postcss": "^3.1.8",
-    "rollup-plugin-serve": "^1.1.0",
+    "rollup-plugin-serve": "^2.0.2",
     "rollup-plugin-url": "^1.4.0",
     "styled-components": "^5.1.0"
   },
