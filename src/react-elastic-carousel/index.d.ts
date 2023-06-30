@@ -109,7 +109,7 @@ export interface ReactElasticCarouselProps {
 }
 
 declare class ReactElasticCarousel extends React.Component<
-  ReactElasticCarouselProps
+  ReactElasticCarouselProps & React.JSX
 > {}
 
 export default ReactElasticCarousel;
