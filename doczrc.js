@@ -1,11 +1,11 @@
-import path from 'path'
-import pkg from './package.json';
+const path = require('path');
+const pkg = require('./package.json');
 
 const libName = pkg.name;
 
-export default {
+module.exports = {
   ignore: ['README.md', 'changelog.md', 'CODE_OF_CONDUCT.md', 'contributing.md', 'LICENSE.md'],
-  //src: './src',
+  // src: './src',
   dest: './demo',
   port: 8888,
   hashRouter: true,
@@ -83,4 +83,4 @@ export default {
   //     },
   //   }
   // },
-}
+};

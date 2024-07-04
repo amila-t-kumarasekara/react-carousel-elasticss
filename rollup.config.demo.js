@@ -1,19 +1,19 @@
-import babel from "rollup-plugin-babel";
-import commonjs from "rollup-plugin-commonjs";
-import postcss from "rollup-plugin-postcss";
-import resolve from "rollup-plugin-node-resolve";
-import url from "rollup-plugin-url";
-import alias from "rollup-plugin-alias";
-import serve from "rollup-plugin-serve";
-import replace from "@rollup/plugin-replace";
-import livereload from 'rollup-plugin-livereload'
+const babel = require("@rollup/plugin-babel").default;
+const commonjs = require("rollup-plugin-commonjs");
+const postcss = require("rollup-plugin-postcss");
+const resolve = require("rollup-plugin-node-resolve");
+const url = require("rollup-plugin-url");
+const alias = require("rollup-plugin-alias");
+const serve = require("rollup-plugin-serve");
+const replace = require("@rollup/plugin-replace");
+const livereload = require("rollup-plugin-livereload");
 
-import libName from "./libName";
+const libName = require("./libName");
 
-import * as ReactNamedExports from 'react';
-import * as ReactIsNamedExports from 'react-is';
+const ReactNamedExports = require('react');
+const ReactIsNamedExports = require('react-is');
 
-export default {
+module.exports = {
   input: `demoApp/src/index.js`,
   output: [
     {
@@ -25,9 +25,11 @@ export default {
   ],
   plugins: [
     alias({
-      "react-elastic-carousel": `src/${libName}/index.js`,
+      entries: {
+        "react-elastic-carousel": `src/${libName}/index.js`,
+      }
     }),
-    //external(),
+    // external(),
     postcss({
       modules: false,
     }),

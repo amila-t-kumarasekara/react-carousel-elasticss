@@ -1,2 +1,2 @@
-import pkg from './package.json';
-export default pkg.name;
+const pkg = require('./package.json');
+module.exports = pkg.name;

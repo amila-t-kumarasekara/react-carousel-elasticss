@@ -3,13 +3,16 @@ name: Node.js Package
 on:
   push:
       branches:
-        - main
+        - master
   release:
-    types: [created]
+    types: [published]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
@@ -33,4 +36,4 @@ jobs:
       - run: npm ci
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_GITHUB_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_GITHUB_TOKEN}}

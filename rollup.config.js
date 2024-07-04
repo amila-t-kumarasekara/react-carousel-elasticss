@@ -1,4 +1,4 @@
-import babel from 'rollup-plugin-babel';
+import babel from '@rollup/plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
 import copy from "rollup-plugin-copy";
 import external from "rollup-plugin-auto-external";
@@ -7,9 +7,9 @@ import resolve from 'rollup-plugin-node-resolve';
 import url from 'rollup-plugin-url';
 import alias from 'rollup-plugin-alias';
 
-import pkg from './package.json'
+import pkg from './package.json' assert { type: 'json' };
 
-import libName from './libName';
+const libName = "react-elastic-carousel";
 
 export default {
   input: `src/${libName}/index.js`,
@@ -37,6 +37,7 @@ export default {
     url(),
     babel({
       exclude: 'node_modules/**',
+      babelHelpers: "external",
       plugins: [ '@babel/external-helpers' ]
     }),
     resolve(),
